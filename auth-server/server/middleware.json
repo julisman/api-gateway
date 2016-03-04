@@ -1,0 +1,69 @@
+{
+  "initial:before": {
+    "loopback#favicon": {
+    },
+    "cors": {
+    },
+    "strong-express-metrics": []
+  },
+  "initial": {
+    "compression": {
+      "params": {
+        "threshold": "4kb"
+      }
+    }
+  },
+  "session": {
+    "express-session": {
+      "params": {
+        "saveUninitialized": true,
+        "resave": true,
+        "secret": "keyboard cat"
+      }
+    }
+  },
+  "auth": {
+    "loopback-component-oauth2#authenticate": []
+  },
+  "auth:after": {
+  },
+  "routes:before": {
+    "./middleware/https-redirect": {
+      "params": {
+        "httpsPort": 3001
+      }
+    }
+  },
+  "routes:after": {
+    "./middleware/rate-limiting-policy": []
+  },
+  "proxies": {
+    "./middleware/proxy": []
+  },
+  "files": {
+    "loopback#static": [
+      {
+        "params": "$!../client/public",
+        "paths": [
+          "/"
+        ]
+      },
+      {
+        "params": "$!../client/admin",
+        "paths": [
+          "/admin"
+        ]
+      }
+    ]
+  },
+  "final": {
+    "loopback#url-not-found": {}
+  },
+  "final:after": {
+    "errorhandler": {
+      "params": {
+        "log": false
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "loopback-component-oauth2": {
+    "dataSource": "db",
+    "loginPage": "/login",
+    "loginPath": "/login",
+    "addHttpHeaders": "X-"
+  }
+}
