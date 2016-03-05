@@ -35,6 +35,7 @@
     "loopback": "^2.20.0",
     "loopback-boot": "^2.9.0",
     "loopback-component-oauth2": "^2.3.4",
+    "loopback-connector-mysql": "^2.2.1",
     "loopback-policy": "^1.0.0-beta1",
     "metrics": "^0.1.9",
     "passport": "^0.2.2",
