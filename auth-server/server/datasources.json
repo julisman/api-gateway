@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "db": {
+    "name": "db",
+    "connector": "mysql",
+    "host": "192.168.0.51",
+    "port": 3306,
+    "database": "api-gateway",
+    "username": "root",
+    "password": "VqtwZY",
+    "createDatabase": true
   }
 }

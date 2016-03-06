@@ -11,7 +11,7 @@
       "id": 123,
       "clientSecret": "secret",
       "name": "demo-app",
-      "redirectURIs": ["https://localhost:3001"],
+      "redirectURIs": ["https://localhost:2101"],
       "scopes": ["basic", "demo", "note"]
     },
     {
