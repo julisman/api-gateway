@@ -4,7 +4,6 @@ var http = require('http');
 var https = require('https');
 var loopback = require('loopback');
 var path = require('path');
-var site = require('./site');
 var sslCert = require('./private/ssl_cert');
 var bodyParser = require('body-parser');
 
@@ -23,10 +22,6 @@ boot(app, __dirname, function(err) {
 
   app.set('view engine', 'ejs');
   app.set('views', path.join(__dirname, 'views'));
-
-  // Set up login/logout forms
-  app.get('/login', site.loginForm);
-
   app.oauth2 = app._oauth2Handlers; // For testing
 
   var isMain = require.main === module;
