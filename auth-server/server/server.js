@@ -6,6 +6,7 @@ var loopback = require('loopback');
 var path = require('path');
 var site = require('./site');
 var sslCert = require('./private/ssl_cert');
+var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 var httpsOptions = {
@@ -13,6 +14,9 @@ var httpsOptions = {
   cert: sslCert.certificate
 };
 app.httpsOptions = httpsOptions;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 boot(app, __dirname, function(err) {
   if (err) throw err;
