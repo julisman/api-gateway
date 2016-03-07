@@ -27,10 +27,6 @@
     "dataSource": "db",
     "public": false
   },
-  "user": {
-    "dataSource": "db",
-    "public": true
-  },
   "rl_users": {
     "dataSource": "db",
     "public": true
