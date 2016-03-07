@@ -1,6 +1,6 @@
 module.exports = function(app) {
 
-    var User = app.models.user;
+    var User = app.models.RlUsers;
 
     //login page
     app.get('/', function(req, res) {

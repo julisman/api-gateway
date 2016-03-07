@@ -1,13 +1,12 @@
 {
-
   "db": {
-    "name": "db",
-    "connector": "mysql",
     "host": "192.168.0.51",
     "port": 3306,
     "database": "api-gateway",
     "username": "root",
     "password": "VqtwZY",
+    "name": "db",
+    "connector": "mysql",
     "createDatabase": true
   }
 }

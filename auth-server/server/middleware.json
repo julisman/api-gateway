@@ -1,9 +1,7 @@
 {
   "initial:before": {
-    "loopback#favicon": {
-    },
-    "cors": {
-    },
+    "loopback#favicon": {},
+    "cors": {},
     "strong-express-metrics": []
   },
   "initial": {
@@ -25,8 +23,6 @@
   "auth": {
     "loopback-component-oauth2#authenticate": []
   },
-  "auth:after": {
-  },
   "routes:before": {
     "./middleware/https-redirect": {
       "params": {
@@ -43,16 +39,16 @@
   "files": {
     "loopback#static": [
       {
-        "params": "$!../client/public",
         "paths": [
           "/"
-        ]
+        ],
+        "params": "$!../client/public"
       },
       {
-        "params": "$!../client/admin",
         "paths": [
           "/admin"
-        ]
+        ],
+        "params": "$!../client/admin"
       }
     ]
   },
