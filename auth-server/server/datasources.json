@@ -2,11 +2,10 @@
   "db": {
     "host": "192.168.0.51",
     "port": 3306,
-    "database": "api-gateway",
-    "username": "root",
-    "password": "VqtwZY",
+    "database": "ralaliweb_db",
+    "username": "ralaliweb",
+    "password": "springfield",
     "name": "db",
-    "connector": "mysql",
-    "createDatabase": true
+    "connector": "mysql"
   }
 }
