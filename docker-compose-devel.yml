@@ -1,0 +1,9 @@
+
+api:
+  image: strongloop/node
+  command : node auth-server/server/server.js
+  ports:
+    - "3001:3001"
+    - "3101:3101"
+  volumes:
+    - .:/app
