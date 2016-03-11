@@ -16,6 +16,8 @@ app.httpsOptions = httpsOptions;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// parse multipart/form-data
+//app.use(require('multer')());
 
 boot(app, __dirname, function(err) {
   if (err) throw err;
