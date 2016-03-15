@@ -7,15 +7,9 @@
       "pipelineId": "default-api-pipeline"
     },
     {
-      "name": "local-protected-resource",
-      "verb": "ALL",
-      "endpoint": "^/protected/(.*)$",
-      "pipelineId": "local-protected-resource-pipeline"
-    },
-    {
-      "name": "note-api",
-      "endpoint": "/api/notes",
-      "pipelineId": "note-api-pipeline"
+      "name": "category",
+      "endpoint": "/api/categories2",
+      "pipelineId": "default-auth-api-pipeline"
     }
   ],
   "pipelines": [
@@ -23,28 +17,14 @@
       "name": "default-api-pipeline",
       "policyIds": [
         "default-metrics-policy",
-        "default-auth-policy",
         "default-rate-limiting-policy",
         "default-api-proxy-policy"
       ]
     },
     {
-      "name": "note-api-pipeline",
+      "name": "default-auth-api-pipeline",
       "policyIds": [
-        "default-metrics-policy",
-        "auth-note-policy",
-        "auth-demo-policy",
-        "default-rate-limiting-policy",
-        "default-api-proxy-policy"
-      ]
-    },
-    {
-      "name": "local-protected-resource-pipeline",
-      "policyIds": [
-        "default-metrics-policy",
-        "auth-demo-policy",
-        "default-rate-limiting-policy",
-        "local-protected-resource-proxy-policy"
+        "default-auth-policy"
       ]
     }
   ],
@@ -58,24 +38,7 @@
       "name": "default-auth-policy",
       "type": "auth",
       "phase": "auth",
-      "scopes": [
-      ]
-    },
-    {
-      "name": "auth-note-policy",
-      "type": "auth",
-      "phase": "auth",
-      "scopes": [
-        "note", "demo"
-      ]
-    },
-    {
-      "name": "auth-demo-policy",
-      "type": "auth",
-      "phase": "auth",
-      "scopes": [
-        "demo"
-      ]
+      "scopes": []
     },
     {
       "name": "default-rate-limiting-policy",
@@ -107,13 +70,7 @@
       "name": "default-api-proxy-policy",
       "type": "reverseProxy",
       "phase": "proxies",
-      "targetURL": "http://localhost:3002/api/$1"
-    },
-    {
-      "name": "local-protected-resource-proxy-policy",
-      "type": "reverseProxy",
-      "phase": "proxies",
-      "targetURL": "http://localhost:3000/protected/$1"
+      "targetURL": "http://192.168.0.194:8081/api/v1/$1"
     }
   ]
 }
