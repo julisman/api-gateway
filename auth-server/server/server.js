@@ -6,7 +6,7 @@ var loopback = require('loopback');
 var path = require('path');
 var sslCert = require('./private/ssl_cert');
 var bodyParser = require('body-parser');
-
+var site = require('./site');
 var app = module.exports = loopback();
 var httpsOptions = {
   key: sslCert.privateKey,
@@ -25,6 +25,9 @@ boot(app, __dirname, function(err) {
   app.set('view engine', 'ejs');
   app.set('views', path.join(__dirname, 'views'));
   app.oauth2 = app._oauth2Handlers; // For testing
+
+  // Set up login/logout forms
+  app.get('/login', site.loginForm);
 
   var isMain = require.main === module;
   app.start = function() {
