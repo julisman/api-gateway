@@ -8,7 +8,7 @@
     },
     {
       "name": "category",
-      "endpoint": "/api/categories2",
+      "endpoint": "/api/categories",
       "pipelineId": "default-auth-api-pipeline"
     }
   ],
