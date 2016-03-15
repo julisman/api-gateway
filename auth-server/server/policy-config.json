@@ -7,7 +7,7 @@
       "pipelineId": "default-api-pipeline"
     },
     {
-      "name": "category",
+      "name": "categories",
       "endpoint": "/api/categories",
       "pipelineId": "default-auth-api-pipeline"
     }
