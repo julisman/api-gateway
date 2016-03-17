@@ -1,9 +1,14 @@
-
 api:
-  image: strongloop/node
-  command : node auth-server/server/server.js
-  ports:
-    - "3001:3001"
-    - "3101:3101"
+  image: secret06/nodestrongloop
   volumes:
     - .:/app
+  working_dir: /app/auth-server
+  ports:
+      - "8701:8701"
+      - "3000:3000"
+  command: node server/server.js
+  #command: slc start
+ # command: slc pm
+ # command: slc arc PORT=4000
+
+ #  command: node server/server.js
