@@ -4,9 +4,10 @@ api:
     - .:/app
   working_dir: /app/auth-server
   ports:
-      - "8701:8701"
+      - "8702:8702"
       - "3000:3000"
-  command: node server/server.js
+  command: slc pm
+ # command: node server/server.js
   #command: slc start
  # command: slc pm
  # command: slc arc PORT=4000
